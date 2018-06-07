@@ -39,7 +39,12 @@ server {
         index index.html index.htm index.php;
 
         server_name _;
-
+	
+	# Block visitors from any git repos
+        location ~ /.git/ {
+      		deny all;
+	}
+	
         location / {
                 # First attempt to serve request as file, then
                 # as directory, then fall back to displaying a 404.
