@@ -1,4 +1,4 @@
-FROM resin/rpi-raspbian:latest
+FROM balenalib/rpi-raspbian
 
 ENTRYPOINT []
 
@@ -9,5 +9,4 @@ RUN apt-get -q update && \
 
 RUN pip3 install rpi.gpio && \
         pip3 install paho-mqtt && \
-        pip3 install twilio && \
         pip3 install python-dateutil
